@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="rates_form">
+            <field name="name">rates.move.form</field>
+            <field name="model">rates.move</field>
+            <field name="arch" type="xml">
+                <form string="Rates Form">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="est_pol"  placeholder="Aqui ira un campo many2one al modelo res.partner"/>
+                        </group>
+                        <group>
+                            <field name="rate_type_id" />
+                            <field name="vigente" />
+                            <field name="fecha"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="rates_list">
+            <field name="name">rates.move.list</field>
+            <field name="model">rates.move</field>
+            <field name="arch" type="xml">
+                <tree string="rates List">
+                    <field name="fecha"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="rates_list_action">
+            <field name="name">Tarifas</field>
+            <field name="res_model">rates.move</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="o_view_nocontent_smiling_face"> Agregar nueva tarifa </p> </field>
+        </record>
+
+        <menuitem id="menu_rates" name="Tarifas" parent="account.menu_finance_configuration" sequence="31"  action="rates_list_action"/>
+    </data>
+</odoo>

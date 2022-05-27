@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="rates_type_form">
+            <field name="name">rates.type.form</field>
+            <field name="model">rates.type</field>
+            <field name="arch" type="xml">
+                <form string="Rates types Form">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="rates_ids" placeholder="Aqui ira un campo many2one al modelo de tipo de cuentas contrato"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="rates_type_list">
+            <field name="name">rates.type.list</field>
+            <field name="model">rates.type</field>
+            <field name="arch" type="xml">
+                <tree string="rates List">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="rates_type_list_action">
+            <field name="name">Tipos de Tarifa</field>
+            <field name="res_model">rates.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="o_view_nocontent_smiling_face"> Agregar nuevo tipo de tarifa </p> </field>
+        </record>
+
+        <menuitem id="menu_rates_type" name="Tipos de Tarifa" parent="account.menu_finance_configuration" sequence="32"  action="rates_type_list_action"/>
+    </data>
+</odoo>

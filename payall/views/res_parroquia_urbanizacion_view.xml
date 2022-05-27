@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="parroquia_urbanizacion_view">
+            <field name="name">res.parroquia.urbanizacion.form</field>
+            <field name="model">res.parroquia.urbanizacion</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    <group string="Crear nueva Urbanización" name="urbanizacion" priority="2">
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="Desc_Larga_Urb"/>
+                        <field name="Nivel_Urb"/>
+                        <field name="Cod_Postal"/>
+                    </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="parroquia_urbanizacion_tree">
+                    <field name="name">res.parroquia.urbanizacion.list</field>
+                    <field name="model">res.parroquia.urbanizacion</field>
+                    <field name="arch" type="xml">
+                        <tree string="Urbanizacion Lista">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="Desc_Larga_Urb"/>
+                            <field name="Nivel_Urb"/>
+                            <field name="Cod_Postal"/>
+                        </tree>
+                    </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="parroquia_urbanizacion_action">
+            <field name="name">Urbanizaciones</field>
+            <field name="res_model">res.parroquia.urbanizacion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="o_view_nocontent_smiling_face"> Agregar Urbanizaciones </p> </field>
+        </record>
+
+        <menuitem id="menu_parroquia_urbanizacion" name="Urbanizaciones" parent="contacts.menu_localisation" sequence="2"  action="parroquia_urbanizacion_action"/>
+    </data>
+</odoo>

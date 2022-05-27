@@ -1,3 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_project_task,project.task,project.model_project_task,project.group_project_user,1,0,0,0
-access_project_task_manager,project.task,project.model_project_task,project.group_project_manager,1,1,1,1
+integracion_payall_All, All users,model_integracion_payall,base.group_user,1,1,1,1
+custom_currencies_all, All users currencies ,model_custom_currencies,base.group_user,1,1,1,1
+rates_all, All users rates ,model_rates_move,base.group_user,1,1,1,1
+rates_type_all, All users rates types ,model_rates_type,base.group_user,1,1,1,1
+estado_municipio, All users rates ,model_res_state_municipio,base.group_user,1,1,1,1
+municipio_parroquia, All users rates ,model_res_municipio_parroquia,base.group_user,1,1,1,1
+parroquia_urbanizacion, All users rates ,model_res_parroquia_urbanizacion,base.group_user,1,1,1,1

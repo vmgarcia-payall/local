@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="custom_currencies_form">
+            <field name="name">custom.currencies.form</field>
+            <field name="model">custom.currencies</field>
+            <field name="arch" type="xml">
+                <form string="custom currencies Form">
+                    <sheet>
+                        <group>
+                            <field name="petro" />
+                            <field name="bolo" />
+                        </group>
+                        <group>
+                            <field name="usd" />
+                            <field name="fecha"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="custom_currencies_list">
+            <field name="name">custom.currencies.list</field>
+            <field name="model">custom.currencies</field>
+            <field name="arch" type="xml">
+                <tree string="custom currencies List">
+                    <field name="fecha"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="custom_currencies_list_action">
+            <field name="name">Tasas de Cambio</field>
+            <field name="res_model">custom.currencies</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="o_view_nocontent_smiling_face"> Agregar nueva tasa de cambio </p> </field>
+        </record>
+
+        <menuitem id="menu_custom_currencies" name="Tasas de Cambio" parent="account.menu_finance_configuration" sequence="30"  action="custom_currencies_list_action"/>
+    </data>
+</odoo>

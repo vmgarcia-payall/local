@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="state_municipio_view">
+            <field name="name">res.state.municipio.form</field>
+            <field name="model">res.state.municipio</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    <group string="Crear nuevo Municipio" name="municipio" priority="2">
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="Desc_Larga_Mun"/>
+                        <field name="Nivel_Mun"/>
+                    </group>
+                        <group string="Parroquias" name="parroquias" priority="2">
+                            <field name="parroquias_ids">
+                            <tree editable="bottom">
+                                <field name="code"/>
+                                <field name="name"/>
+                                <field name="Desc_Larga_Parr"/>
+                                <field name="Nivel_Parr"/>
+                            </tree>
+                            </field>
+                        </group>
+
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="country_municipio_tree">
+                    <field name="name">res.state.municipio.list</field>
+                    <field name="model">res.state.municipio</field>
+                    <field name="arch" type="xml">
+                        <tree string="Municipios Lista">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="Desc_Larga_Mun"/>
+                            <field name="Nivel_Mun"/>
+                        </tree>
+                    </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="state_municipio_action">
+            <field name="name">Municipios</field>
+            <field name="res_model">res.state.municipio</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="o_view_nocontent_smiling_face"> Agregar municipios </p> </field>
+        </record>
+
+        <menuitem id="menu_state_municipio" name="Municipios" parent="contacts.menu_localisation" sequence="2"  action="state_municipio_action"/>
+    </data>
+</odoo>

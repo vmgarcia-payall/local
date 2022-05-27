@@ -3,15 +3,14 @@
     'name': "payall",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Modulo implementado para la gestion de pagos y recargas""",
 
     'description': """
-        Long description of module's purpose
+        Modulo implementado para la gestion de pagos y recargas
     """,
 
     'author': "Payall",
-    'website': "http://www.yourcompany.com",
+    'website': 'https://payall.com.ve/',
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -20,19 +19,32 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','project','timesheet_grid'],
+    'depends': ['base','account_accountant', 'contacts'],
 
     # always loaded
     'data': [
-        'security/payall_security.xml',
         'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
-        'views/hr_timesheet_project_task_create_timesheet_inherit.xml',
-        'views/hr_timesheet_project_task_inherit.xml'
+        'data/chart_data.xml',
+        'data/account.account.template.csv',
+        'data/chart_post_data.xml',
+        'data/chart_template_data.xml',
+        'data/res_partner.xml',
+        'views/currencies.xml',
+        'views/rates.xml',
+        'views/rates_type.xml',
+        'views/account_move_inherit_view.xml',
+        'views/res_partner_inherit.xml',
+        'views/res_country_state_view.xml',
+        'views/res_state_municipio_view.xml',
+        'views/res_municipio_parroquia_view.xml',
+        'views/res_parroquia_urbanizacion_view.xml',
+        'data/res.country.state.csv',
+        'data/res.state.municipio.csv',
+        'data/res.municipio.parroquia.csv',
+        'data/res.parroquia.urbanizacion.csv'
+
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
     ],
 }

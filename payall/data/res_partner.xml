@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="demo_user" model="res.partner">
+            <field name="name">Caracas</field>
+            <field name="titular">Payall</field>
+            <field name="company_type">company</field>
+            <field name="dir_fisc">Caracas es una ciudad ubicada en la región Capital de Venezuela.</field>
+            <field name="vat">J-00041312-6</field>
+        </record>
+    </data>
+</odoo>
